@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e1e7;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #d9534f;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .button {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+            .button:hover {
+                background-color: #c9302c;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>I'm Sorry, <span id="name">[Your Loved One's Name]</span></h1>
+        <p>I know I made a mistake, and I deeply regret it. You mean the world to me, and I truly hope you can forgive me. I'm willing to do whatever it takes to make things right.</p>
+        <p class="heart">❤️</p>
+        <button class="button" onclick="sendMessage()">Forgive Me?</button>
+    </div>
+
+    <script>
+        // Replace [Your Loved One's Name] with the actual name
+        document.getElementById("name").textContent = "Ajaaay"; // Change "John" to your loved one's name
+
+        function sendMessage() {
+            alert("I hope you can forgive me. I love you! ❤️");
+        }
+    </script>
+
+</body>
+</html>
