@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-family: 'Dancing Script', cursive;
+            margin-top: 50px;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 500px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+            .message-box p {
+                font-size: 1.3em;
+                font-weight: 300;
+            }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            color: #ff758c;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+            button:hover {
+                background: #ff4081;
+                color: white;
+            }
+
+        .balloons {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: red;
+            border-radius: 50%;
+            top: 100vh;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-120vh);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday, [Your Crush's Name] 🎂🎈</h1>
+
+    <div class="container">
+        <div class="message-box">
+            <p>
+                Today is all about celebrating **YOU!** 🎉
+                You bring happiness to those around you, and I hope today is just as amazing as you are. 💖
+            </p>
+        </div>
+        <button onclick="playMusic()">Click for a Surprise 🎶</button>
+    </div>
+
+    <audio id="birthdaySong" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3"></audio>
+
+    <script>
+        function playMusic() {
+            document.getElementById('birthdaySong').play();
+            alert("Sending you love, happiness, and joy! 💕🎂");
+        }
+
+        function createBalloons(num) {
+            for (let i = 0; i < num; i++) {
+                let balloon = document.createElement('div');
+                balloon.classList.add('balloons');
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+                balloon.style.animationDuration = (Math.random() * 3 + 4) + "s";
+                document.body.appendChild(balloon);
+            }
+        }
+
+        function createConfetti(num) {
+            for (let i = 0; i < num; i++) {
+                let confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.background = `hsl(${Math.random() * 360}, 100%, 80%)`;
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.body.appendChild(confetti);
+            }
+        }
+
+        createBalloons(20);
+        createConfetti(50);
+    </script>
+
+</body>
+</html>
